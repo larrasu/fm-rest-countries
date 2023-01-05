@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+
+  header {
+    @apply flex items-center justify-between;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply cursor-pointer transition;
+  }
+}
