@@ -8,9 +8,10 @@
     <div class="countries">
       <div class="country" v-for="country of countries">
         <div class="flag">
-          <img
+          <nuxt-img
             :src="country.flags.png"
             :alt="`Flag of ${country.name.common}`"
+            width="100%"
           />
         </div>
         <div class="info">

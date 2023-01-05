@@ -11,11 +11,15 @@ export default defineNuxtConfig({
   modules: [
     "nuxt-headlessui",
     "nuxt-icon",
+    "@nuxt/image-edge",
     "@nuxtjs/google-fonts",
     "@nuxtjs/tailwindcss",
     "@vueuse/nuxt",
     "@vueuse/motion/nuxt",
   ],
+  image: {
+    domains: ["restcountries.com", "flagcdn.com"],
+  },
   headlessui: {
     prefix: "",
   },
