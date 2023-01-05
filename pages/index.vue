@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div class="search">
       <Icon name="heroicons:magnifying-glass" />
       <input type="text" placeholder="Search for a country..." />

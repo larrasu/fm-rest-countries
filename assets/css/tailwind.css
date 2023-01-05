@@ -4,15 +4,19 @@
 
 @layer base {
   body {
-    @apply antialiased;
+    @apply antialiased font-semibold text-light-300;
   }
 
   header {
-    @apply flex items-center justify-between;
+    @apply flex items-center justify-between px-5 py-4 bg-light-100 shadow-lg font-extrabold;
   }
 }
 
 @layer components {
+  .container {
+    @apply grid gap-6 my-10;
+  }
+
   .btn {
     @apply cursor-pointer transition;
   }
