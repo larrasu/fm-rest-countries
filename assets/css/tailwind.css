@@ -3,21 +3,83 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply transition-colors duration-500;
+  }
   body {
-    @apply antialiased font-semibold text-light-300;
+    @apply antialiased font-semibold text-light-300 bg-light-100 dark:text-white dark:bg-dark-100;
   }
 
   header {
-    @apply flex items-center justify-between px-5 py-4 bg-light-100 shadow-lg font-extrabold;
+    @apply bg-light-100 dark:bg-dark-200 shadow-lg font-semibold;
+  }
+
+  main {
+    @apply max-w-7xl text-sm flex flex-col gap-10 my-10 mx-auto px-5 xl:px-0;
   }
 }
 
 @layer components {
-  .container {
-    @apply grid gap-6 my-10;
+  .navbar {
+    @apply max-w-7xl flex items-center justify-between mx-auto px-5 py-10 xl:px-0;
+  }
+
+  .filtering {
+    @apply flex items-center justify-between w-full;
+  }
+
+  .search {
+    @apply flex items-center gap-2 px-5 py-4 bg-white dark:bg-dark-200 rounded-md shadow-lg font-extrabold text-base;
+  }
+  .search > input {
+    @apply flex-1 border-none focus:ring-0 font-light bg-white dark:bg-dark-200;
+  }
+
+  .countries {
+    @apply grid md:grid-cols-3 lg:grid-cols-4 gap-16 px-5 md:px-0;
+  }
+  .country {
+    @apply flex flex-col gap-5 bg-white shadow-lg rounded-lg overflow-hidden;
+  }
+  .country > .flag img {
+    @apply w-full;
+  }
+  .country > .info {
+    @apply px-5 pt-4 pb-10;
+  }
+  .country > .info > h3 {
+    @apply font-extrabold text-xl mb-4;
+  }
+  .country > .info > p {
+    @apply mb-1;
+  }
+
+  .detail > img {
+    @apply shadow w-full;
   }
 
   .btn {
-    @apply cursor-pointer transition;
+    @apply cursor-pointer transition px-5 py-4;
+  }
+  .btn-back {
+    @apply btn flex items-center gap-2 shadow-lg rounded mb-20;
+  }
+
+  .list-move, /* apply transition to moving elements */
+.list-enter-active,
+.list-leave-active {
+    transition: all 0.5s ease;
+  }
+
+  .list-enter-from,
+  .list-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  /* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+  .list-leave-active {
+    position: absolute;
   }
 }
