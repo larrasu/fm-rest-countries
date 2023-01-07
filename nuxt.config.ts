@@ -6,6 +6,21 @@ export default defineNuxtConfig({
         lang: "en",
       },
       title: "Frontend Mentor | REST Countries API",
+      meta: [
+        {
+          charset: "utf-8",
+        },
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1",
+        },
+        {
+          hid: "description",
+          name: "description",
+          content:
+            "This is a solution to the REST Countries API with color theme switcher challenge on Frontend Mentor.",
+        },
+      ],
     },
     pageTransition: { name: "page", mode: "out-in" },
   },
@@ -16,7 +31,6 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxtjs/tailwindcss",
     "@vueuse/nuxt",
-    "@vueuse/motion/nuxt",
   ],
   image: {
     domains: ["restcountries.com", "flagcdn.com"],
