@@ -17,6 +17,9 @@ module.exports = {
       fontFamily: {
         sans: ["Nunito Sans", "sans-serif"],
       },
+      boxShadow: {
+        btn: "0 0 5px rgba(0, 0, 0, 0.25)",
+      },
     },
   },
   plugins: [require("@tailwindcss/forms")],

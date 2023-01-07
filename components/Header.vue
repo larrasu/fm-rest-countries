@@ -1,7 +1,9 @@
 <template>
   <header>
     <div class="navbar">
-      <div class="font-extrabold text-2xl">Where in the world?</div>
+      <NuxtLink to="/" class="font-extrabold text-2xl"
+        >Where in the world?</NuxtLink
+      >
       <div>
         <button @click="toggleDark()" class="flex items-center gap-2">
           <Icon v-if="isDark" name="heroicons:moon" />

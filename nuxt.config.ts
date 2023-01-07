@@ -7,6 +7,7 @@ export default defineNuxtConfig({
       },
       title: "Frontend Mentor | REST Countries API",
     },
+    pageTransition: { name: "page", mode: "out-in" },
   },
   modules: [
     "nuxt-headlessui",

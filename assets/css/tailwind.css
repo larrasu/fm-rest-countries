@@ -7,7 +7,7 @@
     @apply transition-colors duration-500;
   }
   body {
-    @apply antialiased font-semibold text-light-300 bg-light-100 dark:text-white dark:bg-dark-100;
+    @apply antialiased text-light-300 bg-light-100 dark:text-white dark:bg-dark-100;
   }
 
   header {
@@ -25,21 +25,37 @@
   }
 
   .filtering {
-    @apply flex items-center justify-between w-full;
+    @apply flex flex-col md:flex-row items-center justify-between gap-6 w-full;
   }
 
   .search {
-    @apply flex items-center gap-2 px-5 py-4 bg-white dark:bg-dark-200 rounded-md shadow-lg font-extrabold text-base;
+    @apply flex items-center w-full md:w-96 gap-2 px-5 py-3 bg-white dark:bg-dark-200 rounded-md shadow-[0_0_5px_rgba(0,0,0,0.20)] dark:shadow-[0_0_5px_rgba(0,0,0,0.40)] font-extrabold text-base;
   }
   .search > input {
     @apply flex-1 border-none focus:ring-0 font-light bg-white dark:bg-dark-200;
   }
 
+  .filter {
+    @apply self-start;
+  }
+  .filter-box {
+    @apply relative;
+  }
+  .filter-button {
+    @apply flex items-center justify-between w-64 bg-white dark:bg-dark-200 text-base px-5 py-3 rounded-md shadow-[0_0_5px_rgba(0,0,0,0.20)] dark:shadow-[0_0_5px_rgba(0,0,0,0.40)];
+  }
+  .filter-options {
+    @apply absolute z-10 mt-2 w-full flex flex-col gap-2 bg-white dark:bg-dark-200 px-5 py-3 rounded-md shadow-[0_0_5px_rgba(0,0,0,0.20)] dark:shadow-[0_0_5px_rgba(0,0,0,0.40)];
+  }
+  .filter-option {
+    @apply cursor-pointer;
+  }
+
   .countries {
-    @apply grid md:grid-cols-3 lg:grid-cols-4 gap-16 px-5 md:px-0;
+    @apply w-full grid md:grid-cols-3 lg:grid-cols-4 gap-16 px-5 md:px-0;
   }
   .country {
-    @apply flex flex-col gap-5 bg-white shadow-lg rounded-lg overflow-hidden;
+    @apply flex flex-col gap-5 bg-white dark:bg-dark-200 transition shadow-[0_0_5px_rgba(0,0,0,0.20)] hover:shadow-[0_0_10px_rgba(0,0,0,0.20)] dark:shadow-[0_0_5px_rgba(0,0,0,0.40)] dark:hover:shadow-[0_0_10px_rgba(0,0,0,0.40)] rounded-lg overflow-hidden;
   }
   .country > .flag img {
     @apply w-full;
@@ -51,35 +67,38 @@
     @apply font-extrabold text-xl mb-4;
   }
   .country > .info > p {
-    @apply mb-1;
+    @apply mb-2;
   }
 
-  .detail > img {
-    @apply shadow w-full;
+  .detail {
+    @apply text-base font-light grid md:grid-cols-2 md:gap-10 lg:gap-40;
+  }
+  .detail > .flag img {
+    @apply shadow w-full object-cover;
+  }
+  .detail > .flag {
+    @apply mb-10;
+  }
+  .detail > .content > .info {
+    @apply mt-4;
+  }
+  .detail > .content > .info > div > p > span:first-child {
+    @apply font-semibold;
+  }
+  .detail > .content > .info {
+    @apply grid gap-6 md:grid-cols-2;
+  }
+  .border-countries {
+    @apply grid grid-cols-3 items-center gap-2 mt-4;
+  }
+  .border-country {
+    @apply transition bg-light-100 dark:bg-dark-200 shadow-[0_0_5px_rgba(0,0,0,0.20)] hover:shadow-[0_0_10px_rgba(0,0,0,0.20)] dark:shadow-[0_0_5px_rgba(0,0,0,0.40)] dark:hover:shadow-[0_0_10px_rgba(0,0,0,0.40)] px-5 py-1 text-center;
   }
 
   .btn {
-    @apply cursor-pointer transition px-5 py-4;
+    @apply cursor-pointer transition px-5 py-2.5;
   }
   .btn-back {
-    @apply btn flex items-center gap-2 shadow-lg rounded mb-20;
-  }
-
-  .list-move, /* apply transition to moving elements */
-.list-enter-active,
-.list-leave-active {
-    transition: all 0.5s ease;
-  }
-
-  .list-enter-from,
-  .list-leave-to {
-    opacity: 0;
-    transform: translateX(30px);
-  }
-
-  /* ensure leaving items are taken out of layout flow so that moving
-   animations can be calculated correctly. */
-  .list-leave-active {
-    position: absolute;
+    @apply btn w-32 text-center bg-light-100 dark:bg-dark-200 flex items-center gap-2 shadow-[0_0_15px_rgba(0,0,0,0.25)] hover:shadow-[0_0_30px_rgba(0,0,0,0.25)] dark:shadow-[0_0_5px_rgba(0,0,0,0.40)] dark:hover:shadow-[0_0_10px_rgba(0,0,0,0.40)] mb-20 text-base px-5;
   }
 }
